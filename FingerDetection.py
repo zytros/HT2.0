@@ -11,12 +11,15 @@ def between(x, a, b):
 
 
 def distance(x1, y1, x2, y2):
-    return math.dist((x1, y1), (x2, y2))
+    x = abs(x1 - x2)
+    y = abs(y1 - y2)
+    return math.sqrt(x * x + y * y)
+    #return math.dist((x1, y1), (x2, y2))
 
 
 
 detector = htm.handDetector(detectionCon = 0.7)
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 imgBlackSrc = np.zeros((400, 800, 3), np.uint8)
 imgBlack = imgBlackSrc.copy()
 startTime = time.time()
